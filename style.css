@@ -1,1 +1,61 @@
 /* add your CSS here */
+
+/* Theme */
+
+:root {
+  --bg: #fef9f3;
+  --bg2: #fdf4eb;
+  --card: rgba(226, 135, 67, 0.08);
+  --card2: rgba(226, 135, 67, 0.12);
+  --text: rgba(51, 35, 25, 0.92);
+  --muted: rgba(89, 62, 43, 0.75);
+  --soft: rgba(226, 135, 67, 0.15);
+
+  --accent: #e28743;   /* warm orange */
+  --accent2: #d97642;  /* terracotta */
+  --accent3: #f4a261;  /* peach */
+  --danger: #e76f51;
+
+  --radius: 18px;
+  --shadow: 0 14px 40px rgba(226, 135, 67, 0.18);
+  --shadow2: 0 10px 26px rgba(226, 135, 67, 0.12);
+
+  --container: 1100px;
+}
+
+/* Base */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  background: radial-gradient(1200px 700px at 10% 10%, rgba(244, 162, 97, 0.18), transparent 60%),
+    radial-gradient(1000px 600px at 90% 20%, rgba(226, 135, 67, 0.15), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  color: var(--text);
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.smallNote {
+  margin-top: 14px;
+  color: rgba(89, 62, 43, 0.68);
+  font-size: 0.92rem;
+}
+
+.smallNote--dark {
+  color: rgba(89, 62, 43, 0.75);
+}
