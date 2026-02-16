@@ -325,3 +325,301 @@ a {
   color: var(--accent2);
 }
 
+/* Sections */
+.section {
+  padding: 50px 0;
+}
+
+.section--alt {
+  background: var(--bg2);
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section__subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+.cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Cards (Products) */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(226, 135, 67, 0.15);
+}
+
+.card__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.card__text {
+  color: var(--muted);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.card__list {
+  list-style: none;
+}
+
+.card__list li {
+  padding: 4px 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* CTA Banner */
+.ctaBanner {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ctaBanner__text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.ctaBanner__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ctaBanner__subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Features */
+.features {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.feature {
+  text-align: center;
+  padding: 20px;
+}
+
+.feature__icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.feature__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feature__text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* About */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.checklist {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Info Box */
+.infoBox {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(226, 135, 67, 0.15);
+}
+
+.infoBox__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.infoBox__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.infoRow dt {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.infoRow dd {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* FAQ */
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq__item {
+  background: white;
+  border: 1px solid rgba(226, 135, 67, 0.15);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.faq__q {
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__q::-webkit-details-marker {
+  display: none;
+}
+
+.faq__a {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.centerCTA {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Contact */
+.contact__left {
+  margin-bottom: 40px;
+}
+
+.contactCards {
+  display: grid;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contactCard {
+  background: white;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.contactCard:hover {
+  background: var(--soft);
+}
+
+
+.contactCard--static:hover {
+  background: white;
+}
+
+.contactCard__icon {
+  font-size: 1.8rem;
+}
+
+.contactCard__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactCard__title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.contactCard__value {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* Footer */
+.footer {
+  background: var(--bg2);
+  border-top: 1px solid rgba(226, 135, 67, 0.15);
+  padding: 25px 0;
+  text-align: center;
+}
+
+.footer__copy {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
