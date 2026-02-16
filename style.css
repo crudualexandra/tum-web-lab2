@@ -169,3 +169,159 @@ a {
   color: white;
 }
 
+/* Hero Section */
+.hero {
+  padding: 40px 0;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.hero__badge {
+  background: var(--soft);
+  color: var(--accent2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero__accent {
+  color: var(--accent);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hero__quick {
+  list-style: none;
+}
+
+.hero__quick li {
+  padding: 4px 0;
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn--primary:hover {
+  background: var(--accent2);
+}
+
+.btn--ghost {
+  border: 2px solid var(--accent);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  background: var(--soft);
+}
+
+.btn--small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* Hero Card */
+.heroCard {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.heroCard__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.heroCard__meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.heroCard__stats {
+  padding: 15px 0;
+  border-top: 1px solid rgba(226, 135, 67, 0.15);
+  border-bottom: 1px solid rgba(226, 135, 67, 0.15);
+  margin-bottom: 15px;
+}
+
+.stat {
+  padding: 5px 0;
+}
+
+.stat__v {
+  font-size: 0.95rem;
+}
+
+.heroCard__actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Hero Hours */
+.heroHours {
+  background: var(--bg2);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.heroHours__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 0.9rem;
+}
+
+.heroHours__k {
+  color: var(--muted);
+}
+
+.heroHours__v {
+  font-weight: 600;
+}
+
+.heroHours__link {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.heroHours__link:hover {
+  color: var(--accent2);
+}
+
