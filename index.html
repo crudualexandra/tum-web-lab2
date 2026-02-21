@@ -519,12 +519,41 @@
 
 </main>
 
+<!-- Mascot - Shopping Assistant -->
+<div class="mascot" id="mascot">
+  <div class="mascot__character">
+    👧
+  </div>
+  <div class="mascot__message">
+    Bună! Cu ce te pot ajuta? 
+    <br>Scrie-ne pe WhatsApp! 💬
+  </div>
+</div>
+
 <footer class="footer">
   <div class="container footer__inner">
     <p class="footer__copy">© <span id="year">2026</span> Magazin Tipografia • Nisporeni</p>
   </div>
 </footer>
 
+<script>
+  // Mascot click/tap functionality for mobile
+  const mascot = document.getElementById('mascot');
+  let messageVisible = false;
+
+  mascot.addEventListener('click', function(e) {
+    e.preventDefault();
+    messageVisible = !messageVisible;
+    if (messageVisible) {
+      mascot.classList.add('mascot--active');
+    } else {
+      mascot.classList.remove('mascot--active');
+    }
+  });
+
+  // Update year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
   </body>
 </html>
