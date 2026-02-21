@@ -1,7 +1,6 @@
-/* add your CSS here */
 
-/* Theme */
 
+/* override pico css variables with the theme */
 :root {
   --bg: #fef9f3;
   --bg2: #fdf4eb;
@@ -21,10 +20,15 @@
   --shadow2: 0 10px 26px rgba(226, 135, 67, 0.12);
 
   --container: 1100px;
+  
+  /* Pico CSS */
+  --pico-primary: #e28743;
+  --pico-primary-hover: #d97642;
+  --pico-background-color: #fef9f3;
+  --pico-border-radius: 12px;
 }
 
 /* Base */
-
 
 html {
   scroll-behavior: smooth;
@@ -32,11 +36,11 @@ html {
 
 body {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Apple Color Emoji",
-    "Segoe UI Emoji";
+    "Segoe UI Emoji" !important;
   background: radial-gradient(1200px 700px at 10% 10%, rgba(244, 162, 97, 0.18), transparent 60%),
     radial-gradient(1000px 600px at 90% 20%, rgba(226, 135, 67, 0.15), transparent 55%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
-  color: var(--text);
+    linear-gradient(180deg, var(--bg), var(--bg2)) !important;
+  color: var(--text) !important;
   line-height: 1.55;
 }
 
