@@ -6,8 +6,8 @@
   --bg2: #fdf4eb;
   --card: rgba(226, 135, 67, 0.08);
   --card2: rgba(226, 135, 67, 0.12);
-  --text: rgba(51, 35, 25, 0.92);
-  --muted: rgba(89, 62, 43, 0.75);
+  --text: #332317;
+  --muted: #593e2b;
   --soft: rgba(226, 135, 67, 0.15);
 
   --accent: #e28743;   /* warm orange */
@@ -40,7 +40,7 @@ body {
   background: radial-gradient(1200px 700px at 10% 10%, rgba(244, 162, 97, 0.18), transparent 60%),
     radial-gradient(1000px 600px at 90% 20%, rgba(226, 135, 67, 0.15), transparent 55%),
     linear-gradient(180deg, var(--bg), var(--bg2)) !important;
-  color: var(--text) !important;
+  color: #332317 !important;
   line-height: 1.55;
 }
 
@@ -186,7 +186,7 @@ a {
 
 .hero__badge {
   background: var(--soft);
-  color: var(--accent2);
+  color: #593e2b;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -198,6 +198,7 @@ a {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 15px;
+  color: #332317 !important;
 }
 
 .hero__accent {
@@ -206,7 +207,7 @@ a {
 
 .hero__subtitle {
   font-size: 1.1rem;
-  color: var(--muted);
+  color: #593e2b !important;
   margin-bottom: 20px;
 }
 
@@ -222,7 +223,7 @@ a {
 
 .hero__quick li {
   padding: 4px 0;
-  color: var(--muted);
+  color: #593e2b !important;
 }
 
 /* Buttons */
@@ -261,18 +262,20 @@ a {
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: var(--text);
 }
 
-.heroCard__title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 5px;
+.heroCard .heroCard__title {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 5px !important;
+  color: #332317 !important;
 }
 
-.heroCard__meta {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-bottom: 20px;
+.heroCard .heroCard__meta {
+  font-size: 0.9rem !important;
+  color: #593e2b !important;
+  margin-bottom: 20px !important;
 }
 
 .heroCard__stats {
@@ -282,12 +285,14 @@ a {
   margin-bottom: 15px;
 }
 
-.stat {
-  padding: 5px 0;
+.heroCard__stats .stat {
+  padding: 5px 0 !important;
+  color: #593e2b !important;
 }
 
-.stat__v {
-  font-size: 0.95rem;
+.heroCard__stats .stat__v {
+  font-size: 0.95rem !important;
+  color: #593e2b !important;
 }
 
 .heroCard__actions {
@@ -347,11 +352,12 @@ a {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #593e2b !important;
 }
 
 .section__subtitle {
   font-size: 1.1rem;
-  color: var(--muted);
+  color: #593e2b !important;
 }
 
 /* Grid */
@@ -419,7 +425,7 @@ a {
 }
 
 .ctaBanner__subtitle {
-  color: var(--muted);
+  color: #593e2b !important;
   font-size: 0.95rem;
 }
 
@@ -442,10 +448,11 @@ a {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #593e2b !important;
 }
 
 .feature__text {
-  color: var(--muted);
+  color: #593e2b !important;
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -462,6 +469,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  color: #332317 !important;
 }
 
 .about__actions {
@@ -477,6 +485,7 @@ a {
   padding: 8px 0;
   padding-left: 25px;
   position: relative;
+  color: #332317 !important;
 }
 
 .checklist li::before {
@@ -493,6 +502,7 @@ a {
   padding: 25px;
   border-radius: 12px;
   border: 1px solid rgba(226, 135, 67, 0.15);
+  color: #332317 !important;
 }
 
 .infoBox__title {
@@ -531,7 +541,7 @@ a {
 
 .faq__item {
   background: white;
-  border: 1px solid rgba(226, 135, 67, 0.15);
+  border: 1px solid rgba(226, 135, 67, 0.15) ;
   border-radius: 10px;
   padding: 20px;
 }
@@ -549,7 +559,7 @@ a {
 
 .faq__a {
   margin-top: 12px;
-  color: var(--muted);
+  color: #593e2b !important;
   line-height: 1.6;
 }
 
@@ -625,6 +635,21 @@ a {
 .footer__copy {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+/* Force dark text overriding Pico (desktop) */
+.heroCard,
+.heroCard *,
+.section__title,
+.feature__title,
+.stat__v,
+.heroCard__meta,
+.heroCard__title,
+p,
+li,
+dt,
+dd {
+  color: #332317 !important;
 }
 
 /* Mascot - Shopping Assistant */
