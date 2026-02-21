@@ -623,3 +623,189 @@ a {
   font-size: 0.9rem;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Header */
+  .header {
+    padding: 12px 0;
+    position: relative;
+    top: 0;
+  }
+
+  .header__inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .brand__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand__name {
+    font-size: 1rem;
+  }
+
+  .brand__tag {
+    font-size: 0.8rem;
+  }
+
+  /* Navigation */
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav__link {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Topbar */
+  .topbar__text {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 30px 0;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero__title {
+    font-size: 1.8rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Hero Card */
+  .heroCard {
+    padding: 20px;
+  }
+
+  .heroCard__title {
+    font-size: 1.2rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 35px 0;
+  }
+
+  .section__title {
+    font-size: 1.6rem;
+  }
+
+  .section__subtitle {
+    font-size: 1rem;
+  }
+
+  /* Grid */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  /* Card */
+  .card {
+    padding: 20px;
+  }
+
+  .card__title {
+    font-size: 1.2rem;
+  }
+
+  /* CTA Banner */
+  .ctaBanner {
+    flex-direction: column;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .ctaBanner__text {
+    min-width: auto;
+  }
+
+  .ctaBanner .btn {
+    width: 100%;
+  }
+
+  /* About */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Center CTA */
+  .centerCTA {
+    flex-direction: column;
+  }
+
+  .centerCTA .btn {
+    width: 100%;
+  }
+
+  /* Contact Cards */
+  .contactCards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Info Box */
+  .infoBox {
+    padding: 20px;
+  }
+
+  /* FAQ */
+  .faq__item {
+    padding: 15px;
+  }
+
+  .faq__q {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .section__title {
+    font-size: 1.4rem;
+  }
+
+  .brand__text {
+    display: none;
+  }
+
+  .topbar__text {
+    font-size: 0.75rem;
+  }
+}
+
