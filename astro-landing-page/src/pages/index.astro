@@ -1,0 +1,218 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Footer from "../components/Footer.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+<MainLayout title="Magazin Tipografia — Nisporeni">
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__text">📍 Nisporeni • Produse alimentare & casă • <strong>Deschis acum</strong></p>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="Magazin Tipografia - Acasă">
+        <img class="brand__logo" src={`${base}assets/images/1.jpg`} alt="Logo Magazin Tipografia" />
+        <span class="brand__text">
+          <span class="brand__name">Magazin Tipografia</span>
+          <span class="brand__tag">Magazin alimentar • Nisporeni</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigație principală">
+        <a class="nav__link" href="#produse">Produse</a>
+        <a class="nav__link" href="#de-ce">De ce noi</a>
+        
+        <a class="nav__link" href="#orar">Orar</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <Hero />
+
+    <section id="produse" class="section">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Ce găsești la noi</h2>
+          <p class="section__subtitle">
+            Sortiment pentru cumpărături rapide: alimente, băuturi, hrană pentru animale și produse pentru casă.
+          </p>
+        </header>
+
+        <div class="grid cards">
+          <article class="card">
+            <h3 class="card__title">Fructe & Legume</h3>
+            <p class="card__text">Produse proaspete pentru salate, gătit și gustări.</p>
+            <ul class="card__list"><li>sezonier & variat</li><li>ideal pentru meniul zilnic</li></ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Cereale & Conserve</h3>
+            <p class="card__text">Tot ce trebuie pentru o bucătărie completă.</p>
+            <ul class="card__list"><li>paste, orez, hrișcă</li><li>conserve, sosuri</li></ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Băuturi & Dulciuri</h3>
+            <p class="card__text">De la sucuri la gustări pentru copii și familie.</p>
+            <ul class="card__list"><li>apă, sucuri, ceai/cafea</li><li>biscuiți, bomboane</li></ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Curățenie & Casă</h3>
+            <p class="card__text">Produse pentru îngrijirea casei și rutina zilnică.</p>
+            <ul class="card__list"><li>detergenți & igienă</li><li>soluții pentru bucătărie/baie/gospodărie</li></ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Mâncare pentru animale</h3>
+            <p class="card__text">Produse pentru hrănirea și îngrijirea animalelor de gospodărie.</p>
+            <ul class="card__list"><li>hrană pentru animale (iepuri, porci, găini, vaci)</li><li>furaj combinat</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <Features />
+
+   
+
+    <section id="orar" class="section">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="section__title">Orar</h2>
+      <p class="section__subtitle">Programul magazinului</p>
+    </header>
+
+    <div class="hoursTableWrap" aria-label="Tabel orar">
+      <table class="hoursTable">
+        <thead>
+          <tr>
+            <th scope="col">Zi</th>
+            <th scope="col">Program</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Luni</th><td>08:00 – 18:00</td></tr>
+          <tr><th scope="row">Marți</th><td>08:00 – 18:00</td></tr>
+          <tr><th scope="row">Miercuri</th><td>08:00 – 18:00</td></tr>
+          <tr><th scope="row">Joi</th><td>08:00 – 18:00</td></tr>
+          <tr><th scope="row">Vineri</th><td>08:00 – 18:00</td></tr>
+          <tr><th scope="row">Sâmbătă</th><td>08:00 – 16:00</td></tr>
+          <tr><th scope="row">Duminică</th><td>08:00 – 13:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Întrebări frecvente</h2>
+          <p class="section__subtitle">Răspunsuri rapide la cele mai comune întrebări.</p>
+        </header>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary class="faq__q">Aveți livrare la domiciliu?</summary>
+            <p class="faq__a">Pentru moment, comenzile se confirmă direct prin telefon / WhatsApp / Facebook.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">Pot verifica disponibilitatea unui produs?</summary>
+            <p class="faq__a">Da. Scrie-ne pe WhatsApp sau Facebook și îți confirmăm rapid.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">Acceptați comenzi pentru cantități mai mari?</summary>
+            <p class="faq__a">Da, contactează-ne în prealabil pentru confirmare.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__q">Pot comanda pentru cineva din familie?</summary>
+            <p class="faq__a">Da, poți comanda pentru rude sau apropiați.</p>
+          </details>
+        </div>
+
+        <div class="centerCTA">
+          <a class="btn btn--primary" href="https://wa.me/37379021721" target="_blank" rel="noopener noreferrer">
+            Scrie acum pe WhatsApp
+          </a>
+          <a
+            class="btn btn--primary"
+            href="https://www.facebook.com/p/Magazin-Tipografia-100077701992519/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Scrie acum pe Facebook
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--contact">
+      <div class="container contact">
+        <div class="contact__left">
+          <h2 class="section__title">Contact</h2>
+          <p class="section__subtitle">Scrie-ne sau sună-ne pentru întrebări și comenzi.</p>
+
+          <div class="contactCards">
+            <a class="contactCard" href="tel:+37379021721">
+              <strong>Telefon</strong>
+              <span>+373 79 021 721</span>
+            </a>
+
+            <a class="contactCard" href="https://wa.me/37379021721" target="_blank" rel="noopener noreferrer">
+              <strong>WhatsApp</strong>
+              <span>Scrie acum</span>
+            </a>
+
+            <div class="contactCard contactCard--static">
+              <strong>Adresă</strong>
+              <span>Alexandru cel Bun 96, Nisporeni</span>
+            </div>
+
+            <a class="contactCard" href="#orar">
+              <strong>Program</strong>
+              <span>Vezi orarul complet</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="mascot" id="mascot">
+    <div class="mascot__character">👧</div>
+    <div class="mascot__message">
+      Bună! Cu ce te pot ajuta?
+      <br />Scrie-ne pe WhatsApp! 💬
+    </div>
+  </div>
+
+  <Footer />
+
+  <script>
+    const mascot = document.getElementById("mascot");
+    let messageVisible = false;
+
+    if (mascot) {
+      mascot.addEventListener("click", function (e) {
+        e.preventDefault();
+        messageVisible = !messageVisible;
+        mascot.classList.toggle("mascot--active", messageVisible);
+      });
+    }
+
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  </script>
+</MainLayout>

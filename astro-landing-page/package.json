@@ -1,0 +1,22 @@
+{
+  "name": "astro-landing-page",
+  "version": "1.0.0",
+  "description": "A landing page built with Astro as a static site generator.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [
+    "astro",
+    "static-site-generator",
+    "landing-page"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^2.0.0"
+  },
+  "devDependencies": {}
+}
