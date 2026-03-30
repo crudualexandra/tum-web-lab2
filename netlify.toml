@@ -1,3 +1,4 @@
 [build]
+  base = "astro-landing-page"
   command = "npm run build"
   publish = "dist"
