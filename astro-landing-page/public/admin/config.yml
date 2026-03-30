@@ -26,7 +26,8 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Întrebare", name: "question", widget: "string" }
-      - { label: "Răspuns", name: "answer", widget: "markdown" }
+      # Use the Markdown body for the answer (standard Decap pattern).
+      - { label: "Răspuns", name: "body", widget: "markdown" }
       - { label: "Ordine", name: "order", widget: "number", default: 1, value_type: "int" }
       - { label: "Activ", name: "active", widget: "boolean", default: true }
 

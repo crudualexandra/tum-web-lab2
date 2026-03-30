@@ -3,8 +3,44 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 import Features from "../components/Features.astro";
 import Footer from "../components/Footer.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
 
 const base = import.meta.env.BASE_URL;
+
+// Load content from src/content/* (populated by Decap CMS)
+const orarEntries = (await getCollection("orar"))
+  .filter((e) => e.data.active !== false)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const orarNotices = await Promise.all(
+  orarEntries.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { entry, Content };
+  })
+);
+
+const faqEntries = (await getCollection("faq"))
+  .filter((e) => e.data.active !== false)
+  .sort((a, b) => (a.data.order ?? 1) - (b.data.order ?? 1));
+
+const faqItems = await Promise.all(
+  faqEntries.map(async (entry) => {
+    const { Content } = await entry.render();
+    return { entry, Content };
+  })
+);
+
+const contactDefaults = {
+  phone: "+373 79 021 721",
+  whatsapp: "https://wa.me/37379021721",
+  facebook: "https://www.facebook.com/p/Magazin-Tipografia-100077701992519/",
+  address: "Alexandru cel Bun 96, Nisporeni",
+  email: "",
+};
+
+const contactEntry = await getEntryBySlug("contact", "contact");
+const contact = contactEntry?.data ?? contactDefaults;
+const phoneTel = String(contact.phone).replace(/\s+/g, "").replace(/[^+\d]/g, "");
 ---
 <MainLayout title="Magazin Tipografia — Nisporeni">
   <div class="topbar">
@@ -85,33 +121,62 @@ const base = import.meta.env.BASE_URL;
    
 
     <section id="orar" class="section">
-  <div class="container">
-    <header class="section__header">
-      <h2 class="section__title">Orar</h2>
-      <p class="section__subtitle">Programul magazinului</p>
-    </header>
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Orar</h2>
+          <p class="section__subtitle">Programul magazinului</p>
+        </header>
 
-    <div class="hoursTableWrap" aria-label="Tabel orar">
-      <table class="hoursTable">
-        <thead>
-          <tr>
-            <th scope="col">Zi</th>
-            <th scope="col">Program</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Luni</th><td>08:00 – 18:00</td></tr>
-          <tr><th scope="row">Marți</th><td>08:00 – 18:00</td></tr>
-          <tr><th scope="row">Miercuri</th><td>08:00 – 18:00</td></tr>
-          <tr><th scope="row">Joi</th><td>08:00 – 18:00</td></tr>
-          <tr><th scope="row">Vineri</th><td>08:00 – 18:00</td></tr>
-          <tr><th scope="row">Sâmbătă</th><td>08:00 – 16:00</td></tr>
-          <tr><th scope="row">Duminică</th><td>08:00 – 13:00</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+        <div class="hoursTableWrap" aria-label="Tabel orar">
+          <table class="hoursTable">
+            <thead>
+              <tr>
+                <th scope="col">Zi</th>
+                <th scope="col">Program</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Luni</th><td>08:00 – 18:00</td></tr>
+              <tr><th scope="row">Marți</th><td>08:00 – 18:00</td></tr>
+              <tr><th scope="row">Miercuri</th><td>08:00 – 18:00</td></tr>
+              <tr><th scope="row">Joi</th><td>08:00 – 18:00</td></tr>
+              <tr><th scope="row">Vineri</th><td>08:00 – 18:00</td></tr>
+              <tr><th scope="row">Sâmbătă</th><td>08:00 – 16:00</td></tr>
+              <tr><th scope="row">Duminică</th><td>08:00 – 13:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="notificari-orar" class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Notificări schimbări orar</h2>
+          <p class="section__subtitle">
+            Anunțuri importante despre program (sărbători, inventar, modificări temporare).
+          </p>
+        </header>
+
+        <div class="schedule-notices">
+          {orarNotices.length ? (
+            orarNotices.map(({ entry, Content }) => (
+              <article class="schedule-notice">
+                <p class="schedule-notice__date">
+                  {entry.data.date.toLocaleDateString("ro-RO")}
+                </p>
+                <p class="schedule-notice__title"><strong>{entry.data.title}</strong></p>
+                <div class="schedule-notice__text"><Content /></div>
+              </article>
+            ))
+          ) : (
+            <article class="schedule-notice schedule-notice--empty">
+              <p>Nu există modificări de program momentan.</p>
+            </article>
+          )}
+        </div>
+      </div>
+    </section>
 
     <section id="faq" class="section">
       <div class="container">
@@ -121,34 +186,25 @@ const base = import.meta.env.BASE_URL;
         </header>
 
         <div class="faq">
-          <details class="faq__item">
-            <summary class="faq__q">Aveți livrare la domiciliu?</summary>
-            <p class="faq__a">Pentru moment, comenzile se confirmă direct prin telefon / WhatsApp / Facebook.</p>
-          </details>
-
-          <details class="faq__item">
-            <summary class="faq__q">Pot verifica disponibilitatea unui produs?</summary>
-            <p class="faq__a">Da. Scrie-ne pe WhatsApp sau Facebook și îți confirmăm rapid.</p>
-          </details>
-
-          <details class="faq__item">
-            <summary class="faq__q">Acceptați comenzi pentru cantități mai mari?</summary>
-            <p class="faq__a">Da, contactează-ne în prealabil pentru confirmare.</p>
-          </details>
-
-          <details class="faq__item">
-            <summary class="faq__q">Pot comanda pentru cineva din familie?</summary>
-            <p class="faq__a">Da, poți comanda pentru rude sau apropiați.</p>
-          </details>
+          {faqItems.length ? (
+            faqItems.map(({ entry, Content }) => (
+              <details class="faq__item">
+                <summary class="faq__q">{entry.data.question}</summary>
+                <div class="faq__a"><Content /></div>
+              </details>
+            ))
+          ) : (
+            <p>Nu există întrebări frecvente momentan.</p>
+          )}
         </div>
 
         <div class="centerCTA">
-          <a class="btn btn--primary" href="https://wa.me/37379021721" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--primary" href={contact.whatsapp} target="_blank" rel="noopener noreferrer">
             Scrie acum pe WhatsApp
           </a>
           <a
             class="btn btn--primary"
-            href="https://www.facebook.com/p/Magazin-Tipografia-100077701992519/"
+            href={contact.facebook}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -165,19 +221,19 @@ const base = import.meta.env.BASE_URL;
           <p class="section__subtitle">Scrie-ne sau sună-ne pentru întrebări și comenzi.</p>
 
           <div class="contactCards">
-            <a class="contactCard" href="tel:+37379021721">
+            <a class="contactCard" href={`tel:${phoneTel}`}>
               <strong>Telefon</strong>
-              <span>+373 79 021 721</span>
+              <span>{contact.phone}</span>
             </a>
 
-            <a class="contactCard" href="https://wa.me/37379021721" target="_blank" rel="noopener noreferrer">
+            <a class="contactCard" href={contact.whatsapp} target="_blank" rel="noopener noreferrer">
               <strong>WhatsApp</strong>
               <span>Scrie acum</span>
             </a>
 
             <div class="contactCard contactCard--static">
               <strong>Adresă</strong>
-              <span>Alexandru cel Bun 96, Nisporeni</span>
+              <span>{contact.address}</span>
             </div>
 
             <a class="contactCard" href="#orar">

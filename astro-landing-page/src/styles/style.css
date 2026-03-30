@@ -550,13 +550,13 @@ a {
   font-weight: 700;
   padding: 0.9rem 1rem;
   background: #f7f7f8;
-  border-bottom: 1px solid rgba(205, 134, 1, 0.714);
+  border-bottom: 1px solid rgba(226, 135, 67, 0.15);
 }
 
 .hoursTable tbody th,
 .hoursTable tbody td {
   padding: 0.8rem 1rem;
-  border-bottom: 1px solid rgba(152, 91, 10, 0.79);
+  border-bottom: 1px solid rgba(226, 135, 67, 0.12);
 }
 
 .hoursTable tbody tr:last-child th,
@@ -575,6 +575,40 @@ a {
     padding: 0.7rem 0.75rem;
     font-size: 0.95rem;
   }
+}
+
+/* Orar notices (Decap CMS content) */
+.schedule-notices {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.schedule-notice {
+  background: #fff;
+  border: 1px solid rgba(226, 135, 67, 0.15);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.schedule-notice__date {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+}
+
+.schedule-notice__title {
+  margin: 0 0 0.35rem;
+}
+
+.schedule-notice__text {
+  margin: 0;
+  color: #593e2b !important;
+  line-height: 1.6;
+}
+
+.schedule-notice--empty {
+  opacity: 0.85;
 }
 
 /* FAQ */
