@@ -8,5 +8,18 @@
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // After login, keep the user on the /admin/ page (works for both
+      // Netlify root deploy and GitHub Pages base-path deploys).
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = document.location.pathname;
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

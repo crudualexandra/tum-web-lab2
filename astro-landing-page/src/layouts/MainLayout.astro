@@ -15,6 +15,26 @@ const {
     <title>{title}</title>
   </head>
   <body>
+    <!-- Netlify Identity emails often redirect to /#recovery_token=... (site root).
+         Forward those tokens to /admin/ so Decap + Identity can complete the flow. -->
+    <script>
+      (function () {
+        const hash = window.location.hash || "";
+        const hasIdentityToken =
+          hash.includes("recovery_token=") ||
+          hash.includes("invite_token=") ||
+          hash.includes("confirmation_token=");
+
+        if (!hasIdentityToken) return;
+
+        const basePath = window.location.pathname.endsWith("/")
+          ? window.location.pathname
+          : window.location.pathname + "/";
+
+        window.location.replace(basePath + "admin/" + hash);
+      })();
+    </script>
+
     <!-- Page content goes here -->
     <slot />
   </body>
