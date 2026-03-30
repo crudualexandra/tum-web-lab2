@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: master
+
+local_backend: true
+
+media_folder: "astro-landing-page/public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "orar"
+    label: "Orar"
+    folder: "astro-landing-page/src/content/orar"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Activ", name: "active", widget: "boolean", default: true }
+      - { label: "Mesaj", name: "body", widget: "markdown" }
+
+  - name: "faq"
+    label: "FAQ"
+    folder: "astro-landing-page/src/content/faq"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Întrebare", name: "question", widget: "string" }
+      - { label: "Răspuns", name: "answer", widget: "markdown" }
+      - { label: "Ordine", name: "order", widget: "number", default: 1, value_type: "int" }
+      - { label: "Activ", name: "active", widget: "boolean", default: true }
+
+  - name: "contact"
+    label: "Contact"
+    files:
+      - label: "Date contact"
+        name: "contact"
+        file: "astro-landing-page/src/content/contact/contact.md"
+        fields:
+          - { label: "Telefon", name: "phone", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Facebook URL", name: "facebook", widget: "string" }
+          - { label: "Adresă", name: "address", widget: "string" }
+          - { label: "Email (opțional)", name: "email", widget: "string", required: false }
