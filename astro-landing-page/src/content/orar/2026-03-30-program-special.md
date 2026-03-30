@@ -1,7 +1,6 @@
 ---
-title: "Program special (exemplu)"
-date: 2026-03-30
+title: "Program special "
+date: 2026-04-12T12:32:00.000+03:00
 active: true
 ---
-
-Exemplu de anunț: în data de **31.03** magazinul va avea program scurt: **08:00 – 12:00**.
+Anunț: în data de **12.04** magazinul va avea zi libera.
